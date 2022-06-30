@@ -1,0 +1,11 @@
+<script>
+  // Parse
+  const paths = window.location.pathname.split("/");
+  // Take down the empty element.
+  paths.shift();
+  // If on github page, this is probably a repo url.
+  if (location.hostname.includes("github.io")) paths.shift();
+  paths[0] = `@${paths[0]}`;
+  
+  location.replace(`https://replit.com/${paths.join("/")}`)
+</script>
